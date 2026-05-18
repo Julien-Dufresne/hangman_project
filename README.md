@@ -6,14 +6,14 @@
 I had to do the following actions: 
 
 User interaction: 
-- Prompting the user for a letter
+- Introducing the game and prompting the user for a letter
 
 
 Backend :
 - Defining the hidden_word ('test' here)
-- Defining the amount of attempts (5 here)
-- Linking together the number of letters and the lenght of the hidden word
-- Creating an empty string called under_word
+- Defining the amount of attempts (6 here)
+- Linking together the number of letters and the lenght of the hidden_word
+- Creating a place holder called under_word containing as many "_" as the number of letters in the hidden_word
 - Creating an empty string called masked_word
 
 
