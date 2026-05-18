@@ -3,29 +3,25 @@
  As part of my studies, we had to use the python languagae to create a small hangman game that consisted of having a hidden word that the user needs to guess the letters until he/she finds the word. 
  He will have a certain amount of attempts to do so.
  
+I had to do the following actions: 
 
-#user interaction
-        #promps the user to enter a letter
-magic_letter = "a"
+User interaction: 
+- prompting the user for a letter
 
 
-#backbone of program
-        #defines the hidden_word
-hidden_word = "test"
-        #defines the attemps
-attepts = 5
+Backend :
+- defining the hidden word ('test' here)
+- defining the amount of attempts (5 here)
+- Linking together the number of letters and the lenght of the hidden word
+- Creating an empty string called under_word
+- Creating an other empty string called new_under_word
 
-         #stores  the number of letters in the hidden_word
-number_of_letters = len(hidden_word)
+- Creating a for loop : adding the amount of letters from the hiden_word as '_' in the new_under_word so the user can see how many letters does the hidden word has
+-  
 
-        #creates an empty string where the word will be replaced by _
-under_word = ""
-        #creates an new empty string where the word will be replaced by _
-new_under_word = ""
 
-        #(under construction)replace this letter in the under_word (using .replace)
-#for letter in map_of_hidden_word[]:
-  #if
+
+
 
 for letter in hidden_word:
   if letter == magic_letter:
