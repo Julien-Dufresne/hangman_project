@@ -1,0 +1,60 @@
+print("Welcome to J's Hangman game. \n You will be asked to give letters to guess the hidden word and you will have 5 attempts to do so")
+hidden_word = "python"
+under_word = "_" * len(hidden_word)
+mistake = 6
+
+
+
+while under_word != hidden_word and mistake > 0:
+
+  print("chances left:" , mistake)
+
+  magic_letter = input("letter:").lower().strip()
+  if  magic_letter.isalpha() is False:
+    print('\t*** This is not a letter, try again ***')
+
+  else:
+
+    masked_word = ""
+    found = False
+
+    for i in range(len(hidden_word)):
+      if hidden_word[i] == magic_letter:
+        masked_word += magic_letter
+        found = True
+
+      elif under_word[i] != "_":
+        masked_word += under_word[i]
+      else:
+        masked_word += "_"
+
+    if found:
+      print("\tGood! You have found a new letter!")
+    else:
+      mistake -= 1
+      print("\tunlucky!")
+
+    under_word = masked_word
+    print(f"the masked word is now:  {masked_word}")
+
+    while mistake > 0:
+      if mistake == 5:
+        print("\t____________\n\t |\n\t O")
+      elif mistake == 4:
+        print("\t____________\n\t |\n\t O\n\t/")
+      elif mistake == 3:
+        print("\t____________\n\t |\n\t O\n\t/ \\")
+      elif mistake == 2:
+        print("\t____________\n\t |\n\t O\n\t/ \\\n\t |")
+      elif mistake == 1:
+        print("\t____________\n\t |\n\t O\n\t/ \\\n\t |\n\t/")
+      break
+
+
+
+
+if under_word == hidden_word:
+  print("\t\tWell done! You have found the masked word: " , masked_word)
+else:
+  print("\t____________\n\t |\n\t O\n\t/ \\\n\t |\n\t /\\")
+  print("\t\tUnlucky! You have been hanged. The word was:" , hidden_word)
