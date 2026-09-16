@@ -1,0 +1,41 @@
+# J's Hangman program with explanations
+
+#user interaction
+        #Create a function that contains the game. It promps the user to enter a letter
+def J_s_hangman():
+  print("Let's play a game:\n Welcome to J's Hangman game. \n You will be asked to give letters to guess the hidden word but you can only be wrong 6 times")
+  hidden_word = "test"
+
+
+#backbone of program
+        #defines the hidden_word and the under_word
+under_word = "_" * len(hidden_word)
+hidden_word = "test"
+  
+        #defines the attemps
+ mistake = 6
+
+      #Define the while loop that continues until the hidden word is found or until the user has used all his attempts.
+while under_word != hidden_word and mistake > 0:
+
+  print("chances left:" , mistake)
+
+  magic_letter = input("letter:").lower().strip()
+  masked_word = ""
+  found = False
+
+    #Create a for loop that checks the letter provided by the user (magic letter) and if it is in
+    #the hidden word, it replaces the _ from the place holder (under word). It keeps the other _ at the same place.
+    #It also prints a message to the user displaying the updated under word.
+    
+    #If it is not found, it removes a chance and prints a message to the user with the number of attempts left.
+
+    #If the word is found, it reveals it, if the number of attempts is reached, it tells the user 
+   for i in range(len(hidden_word)):
+      if hidden_word[i] == magic_letter:
+        masked_word += magic_letter
+        found = True
+      elif under_word[i] != "_":
+        masked_word += under_word[i]
+      else:
+        masked_word += "_"
